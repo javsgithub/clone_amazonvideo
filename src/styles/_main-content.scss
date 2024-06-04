@@ -1,0 +1,98 @@
+@use "variaveis";
+@use "mixins";
+
+// @mixin text ($fontSize: 15px) {
+//     font-size: $fontSize;
+//     color: variaveis.$mainTextColor;
+// }
+
+.main-content {
+    padding: 72px 58px 0;
+
+    .container {
+        max-width: 1233px;
+        
+        .mini-container{
+            max-width: 550px;
+        }
+    }    
+    
+    &__title{
+        padding: 80px 0 24px;
+        
+        img{
+            width: 400px;
+        }
+    }
+
+    &__classification{
+
+        &__item{
+            max-height: 20px;
+            margin-right: 2px;
+        }   
+
+        span{
+            display: block;
+            @include text(12px);
+            color: variaveis.$secondaryTextColor;
+            padding-bottom: 36px;
+        }
+    }
+    
+    &__description {
+        @include text(20px);
+        margin-bottom: 16px;
+    }
+
+    &__control{
+        display: flex;
+        align-items: center;
+        
+        &__item {  
+            @include controlItem(variaveis.$watchButtonBgColor);         
+
+            a{
+                @include linkControl(variaveis.$backgroundColor);
+                
+                img {
+                    transform: translateY(10%);
+                    margin-right: 16px;
+                }
+            }
+
+            &:hover {
+                opacity: .6;
+            }
+
+            &--preview {
+                @include controlItem;
+    
+                a {
+                    @include linkControl;
+                }
+    
+                &:hover {
+                    opacity: .7;
+                }
+            }
+    
+            &--add {
+                @include controlItem;
+                border-radius: 100%;
+                height: 48px;
+                width: 48px;
+    
+                img{
+                    width: 16px;
+                    transform: translate(-45%, 15%);
+                }
+    
+                &:hover {
+                    opacity: .7;
+                }
+            }
+        }
+    }
+}
+

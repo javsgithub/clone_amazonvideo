@@ -1,0 +1,81 @@
+@use "variaveis";
+@use "mixins";
+
+.header {
+    width: 100vw;
+    
+    &__nav { 
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding: 0 36px;
+        position: fixed;
+        transition: all 0.3s;    
+    }
+
+    &__branding {
+        cursor: pointer;
+        margin-right: 32px;
+        img {
+            max-width: 86px;
+        }
+    }
+
+    &__menu {
+        display: flex;
+        
+        &__link {
+            margin-right: 16px;
+            list-style-type: none;
+            a {
+                text-decoration: none;
+                padding: 14px 18px;
+                display: flex;
+                align-items: center;
+
+                p {
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    @include text(13px);
+                    letter-spacing: 1px;
+                    display: inline-block;
+                    margin: 12px 0 12px 8px;
+                    padding: 2px 0;
+                    border-bottom: 2px solid transparent;
+                    transition: .3s ease-in-out;
+
+                    &:hover {
+                        border-bottom: 2px solid #f9f9f9;
+
+                    }
+                }
+
+                img {
+                    width: 22px;
+                    transform: translateY(-10%);
+                }
+            }
+        }
+    }
+
+    &__profile {            
+        height: 56px;
+        cursor: pointer;
+        
+        img {
+            max-width: 56px;
+            margin-left: 16px;
+            border-radius: 100%;
+            position: fixed;
+            top: 10px;
+            right: 24px;
+            //z-index: 2;
+        }    
+    }
+
+    &--background {
+        background-color: variaveis.$backgroundColor;
+        transition: all 0.5s;
+    }
+}
+

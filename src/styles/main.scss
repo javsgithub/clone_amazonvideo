@@ -1,0 +1,83 @@
+@use "variaveis";
+@use "mixins";
+@use "header";
+@use "profile";
+@use "main-content";
+@use "movies";
+@use "footer";
+
+@font-face {
+    font-family: Avenir;
+    src: url(../../assets/fonts/Avenir-Regular.woff2);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: Avenir;
+    src: url(../../assets/fonts/Avenir-Bold.woff2);
+    font-weight: 700;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Avenir, sans-serif;
+}
+
+.text--24 {
+    @include text(24px);    
+}
+
+.text--20 {
+    @include text(20px);
+}
+
+.text--20--changed {
+    @include text(20px);
+    color: variaveis.$secondaryTextColor;
+}
+
+.text {
+    @include text;
+}
+
+.text--changed {
+    @include text;
+    color: variaveis.$secondaryTextColor;
+}
+
+.text--13 {
+    @include text(13px);
+}
+
+.text--12 {
+    @include text(12px);
+}
+
+.text--12--changed {
+    @include text(12px);
+    color: variaveis.$secondaryTextColor;
+}
+
+.main-image {
+    width: 100%;
+    height: 100%;
+    background-color: variaveis.$backgroundColor;
+    position: relative;
+    transition: all .8s;
+}
+
+.main-image::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: url(../../dist/images/hero.webp);
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: absolute;
+    z-index: -1;
+    opacity: var(--afterOpac, .6);
+}

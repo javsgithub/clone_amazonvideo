@@ -3,11 +3,183 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Clone Amazon Prime</title>
+        <title>Clone Site Disney+</title>
         <link rel="stylesheet" href="./dist/css/main.css">
     </head>
-    <body>
-
-        
+    <body class="main-image">
+            <header class="header">
+                <nav class="header__nav">
+                    <h1 class="header__branding">
+                        <img src="./dist/images/logo_disney.png" alt="disney+">
+                    </h1>
+                    <ul class="header__menu">
+                        <li class="header__menu__link">
+                            <a href="#">
+                                <img src="./dist/images/icones/house.png" alt="home">
+                                <p>Início</p>
+                            </a>
+                        </li>
+                        <li class="header__menu__link"><a href="#"><img src="./dist/images/icones/hand-lens.png" alt="search"><p>Pesquisa</p></a></li>
+                        <li class="header__menu__link"><a href="#"><img src="./dist/images/icones/whiteplus.svg" alt="my list"><p>Minha Lista</p></a></li>
+                        <li class="header__menu__link"><a href="#"><img src="./dist/images/icones/film.png" alt="movies"><p>Filmes</p></a></li>
+                        <li class="header__menu__link"><a href="#"><img src="./dist/images/icones/series.png" alt="series"><p>Séries</p></a></li>
+                        <li class="header__menu__link"><a href="#"><img src="./dist/images/icones/star.png" alt="originals"><p>Originais</p></a></li>
+                    </ul>
+                    <div class="header__profile"><img src="./dist/images/Profile-pic.jpg" alt="Profile Picture"></div>
+                </nav>
+            </header>
+            <section class="profile">
+                <div class="profile__container">
+                    <div class="profile__header">
+                        Meu Perfil
+                        <!-- <div><img src="./dist/images/Profile-pic.jpg" alt="Profile Picture"></div> -->
+                    </div>
+                    <div class="profile__add">
+                        <div><img src="./dist/images/icones/whiteplus.svg" alt="Adicionar Perfil"></div>
+                        Adicionar Perfil
+                    </div>                        
+                    <ul class="profile__menu">
+                        <li class="profile__menu__item">Editar Perfis</li>
+                        <li class="profile__menu__item">Configurações do Aplicativo</li>
+                        <li class="profile__menu__item">Conta</li>
+                        <li class="profile__menu__item">Ajuda</li>
+                        <li class="profile__menu__item">Sair</li>
+                    </ul>
+                </div>
+            </section>
+            <section class="main-content">
+                <div class="container">
+                    <div class="mini-container">
+                        <div class="main-content__title"><img src="./dist/images/title.webp" alt="X-Men 2"></div>
+                        <div class="main-content__classification">
+                            <img class="main-content__classification__item" src="./dist/images/age.webp" alt="Idade indicada: 12 anos">
+                            <img class="main-content__classification__item" src="./dist/images/hd.webp" alt="HD">
+                            <img class="main-content__classification__item" src="./dist/images/closed_caption.webp" alt="Closed Caption">
+                            <span>2003 ∙ 2h 15min ∙ Ficção Científica, Super-heróis</span>
+                        </div>
+                        <p class="main-content__description">O X-Men calouro Noturno unirá forças com Magneto para salvar seus irmãos e evitar um holocausto.</p>
+                        <div class="main-content__control">
+                            <button class="main-content__control__item">
+                                <a href="https://www.youtube.com/watch?v=DMNlC-2nQ2k&t=5s">
+                                    <img src="./dist/images/icones/play.png" alt="Play">
+                                    Assistir
+                                </a>
+                            </button>
+                            <button class="main-content__control__item main-content__control__item--preview">
+                                <a href="https://www.youtube.com/watch?v=KjzPi5hfv9c&t=21s" target="_blank">Trailer</a>
+                            </button>
+                            <button class="main-content__control__item main-content__control__item--add"><img src="./dist/images/icones/plus.png" alt="Add to my list"></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="movies main-content">
+                <nav class="movies__menu">
+                    <button data-tab-button="suggestions" class="movies__menu__button movies__menu__button--is-active">
+                        Sugestões
+                    </button>
+                    <button data-tab-button="extras" class="movies__menu__button">
+                        Extras
+                    </button>
+                    <button data-tab-button="details" class="movies__menu__button">
+                        Detalhes
+                    </button>
+                </nav>
+                <ul data-tab-id="suggestions" class="movies__list movies__list--is-active">
+                    <li class="movies__list__item"><a href="#"><img src="./dist/images/display/x-men3.webp" alt="X-men 3"></a></li>
+                    <li class="movies__list__item"><a href="#"><img src="./dist/images/display/x-men_origins.webp" alt="Wolverine Origins"></a></li>
+                    <li class="movies__list__item"><a href="#"><img src="./dist/images/display/x-men_first_class.webp" alt="X-men First Class"></a></li>
+                    <li class="movies__list__item"><a href="#"><img src="./dist/images/display/wolverine_imortal.webp" alt="Wolverine Imortal"></a></li>                
+                    <li class="movies__list__item"><a href="#"><img src="./dist/images/display/x-men_days.webp" alt="X-men - Dias de um Futuro Esquecido"></a></li>
+                    <li class="movies__list__item"><a href="#"><img src="./dist/images/display/x-men_apocalipse.webp" alt="X-men - Apocalipse"></a></li>
+                    <li class="movies__list__item"><a href="#"><img src="./dist/images/display/x-men_the_movie.webp" alt="X-men- O filme"></a></li>
+                    <li class="movies__list__item"><a href="#"><img src="./dist/images/display/x-men_cartoon.webp" alt="X-men - Desenho"></a></li>
+                </ul>
+                <ul data-tab-id="extras" class="movies__list">
+                    <li class="movies__list__item movies__list__item--trailer">
+                        <a href="https://www.youtube.com/watch?v=KjzPi5hfv9c" target="_blank">
+                            <img src="./dist/images/x2_clip.webp" alt="X-men 3">
+                            <img src="./dist/images/icones/whiteplay.svg" alt="Play button">
+                        </a>
+                        <div class="movies__list__item__trailer-info">
+                            <p class="movies__list__item__trailer-info__title">X2 Clip</p>
+                            <p class="movies__list__item__trailer-info__text">Confira uma prévia deste lançamento.</p>
+                            <span>(2min) <img src="./dist/images/age2.webp" alt="Recommended Age"></span>
+                        </div>
+                    </li>
+                </ul>
+                <ul data-tab-id="details" class="movies__list movies__list--details">
+                    <li class="movies__list__item movies__list__item--block1 ">
+                        <h3 class="text--24">X-Men 2</h3>
+                        <p class="text--20">
+                            Depois de um especialista em "operações especiais" anti-mutantes raptar o Professor Xavier, aprisionar seus alunos e roubar o Cérebro, o fugitivo X-Men calouro Noturno une forças com Magneto para salvar seus irmãos e evitar um holocausto.
+                        </p>
+                    </li>
+                    <li class="movies__list__item movies__list__item--block2">
+                        <div>
+                            <h4 class="text--changed">Duração:</h4>
+                            <span class="text">2h 15min</span>
+                        </div>
+                        <div>
+                            <h4 class="text--changed">Data de lançamento</h4>
+                            <span class="text">2003</span>
+                        </div>
+                        <div>
+                            <h4 class="text--changed">Gênero</h4>
+                            <span class="text">Ficção científica, Super-heróis, Ação e aventura</span>
+                        </div>
+                        <div>
+                            <h4 class="text--changed">Classificação</h4>
+                            <span class="text"><img src="./dist/images/age.webp" alt=""></span>
+                        </div>
+                        <div>
+                            <h4 class="text--changed">Dispnível nos seguintes formatos:</h4>
+                            <span class="text">
+                                <button>4k ultra hd</button>
+                                <button>hdr10</button>
+                                <button>5.1</button>
+                                <button>cc</button>
+                            </span>
+                        </div>
+                    </li>
+                    <li class="movies__list__item movies__list__item--block3">
+                        <div>
+                            <h4 class="text--changed">Direção:</h4>
+                            <span class="text">Brian Singer</span>
+                        </div>
+                        <div>
+                            <h4 class="text--changed">Elenco:</h4>
+                            <span class="text">Patrick Stewart</span>
+                            <span class="text">Hugh Jackman</span>
+                            <span class="text">Ian McKellen</span>
+                            <span class="text">Halle Berry</span>
+                            <span class="text">Fanke Janssen</span>
+                            <span class="text">James Marsden</span>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+            <footer class="footer">
+                <div class="footer__branding"><img src="./dist/images/logo_disney.png" alt=""></div>
+                <div class="footer__further-info">
+                    <ul class="footer__further-info__menu">
+                        <li class="footer__further-info__menu__item">Política de Privacidade</li>
+                        <li class="footer__further-info__menu__item">termos de Uso da Disney</li>
+                        <li class="footer__further-info__menu__item">Aviso de Direitos de Privacidade do Brasil</li>
+                        <li class="footer__further-info__menu__item">Política de Cookies</li>
+                        <li class="footer__further-info__menu__item">Contrato de Assinatura</li>
+                        <li class="footer__further-info__menu__item">Ajuda</li>
+                        <li class="footer__further-info__menu__item">Dispositivos Compátiveis</li>
+                        <li class="footer__further-info__menu__item">Sobre o Disney+</li>
+                        <li class="footer__further-info__menu__item">Anúncios Personalizados</li>
+                    </ul>
+                    <p class="footer__further-info__disclaimer ">
+                        Disney+ é um serviço pago, baseado em assinatura e sujeito a termos e condições. O serviço Disney+ é comercializado por The Walt Disney Company (Brasil) Ltda., World Trade Center, Av. Das Nações Unidas, 12.551, 12.555, 12.559, Piso 10, São Paulo/SP - CEP 04578-903, Brasil e CNPJ/M 73.042.962/0004-20
+                    </p>
+                </div>
+                <p class="footer__further-info__copyright">
+                    &copy; Disney. Todos os direitos reservados.
+                </p>
+            </footer>
+            <script src="./src/main.js"></script>
     </body>
-    </html>

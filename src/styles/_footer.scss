@@ -1,0 +1,49 @@
+@use "variaveis";
+@use "mixins";
+
+.footer {
+    margin-top: 32px;
+    background-color: variaveis.$backgroundColor;
+    &__branding {
+        text-align: center;
+        padding-top: 19px;
+        cursor: pointer;
+        img{
+            width: 86px;
+        }
+    }
+
+    &__further-info {
+        max-width: 500px;
+        margin: 0 auto;
+
+        &__menu {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            &__item {
+                margin: 10px 5px;
+                padding: 1px 6px;
+                @include text(12px);
+                list-style-type: none;
+                cursor: pointer;
+            }
+        }
+
+        &__disclaimer {
+            text-align: center;
+            @include text(12px);
+            color: variaveis.$secondaryTextColor;
+            margin: 0 28px;
+            max-width: 444px;
+        }
+
+        &__copyright {
+            @include text(12px);
+            color: variaveis.$secondaryTextColor;
+            padding: 8px 0 24px;
+            text-align: center;
+        }
+    }
+}

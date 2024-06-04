@@ -1,0 +1,97 @@
+@use "variaveis";
+@use "mixins";
+
+// @mixin text ($fontSize: 15px) {
+//     font-size: $fontSize;
+//     color: variaveis.$mainTextColor;
+// }
+
+.profile {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 1px solid variaveis.$mainTextColordarker;
+    border-radius: 4px;
+    background-color: variaveis.$backgroundColor;
+    transition: ease-in-out 1s;
+    z-index: 1;
+
+    &__container {
+        padding: 10px 24px 0 24px;
+    }
+    
+    &__header {
+            height: 56px;
+            display: flex;
+            align-items: center;
+            @include text;
+            color: variaveis.$secondaryTextColor;
+            font-weight: bold;
+            //padding-bottom: 16px;
+            max-width: 300px;
+            margin-left: 50px;
+            margin-bottom: 14px;
+            cursor: pointer;
+            &:hover {
+                color: variaveis.$mainTextColor;
+            }
+        }        
+    
+    &__add {
+        display: flex;
+        align-items: center;
+        justify-content: left; 
+        @include text;
+        color: variaveis.$secondaryTextColor;
+        //font-weight: bold;
+        max-width: 300px;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        border-top: 1px solid variaveis.$mainTextColordarker;
+        //border-radius: 100%;
+        //border: 1px solid $secondaryTextColor;
+        cursor: pointer;
+
+        div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 56px;
+            height: 56px;
+            //border: 1px solid $secondaryTextColor;
+            margin-right: 16px;
+            background-color: variaveis.$mainTextColordarker;
+            opacity: .6;
+            border-radius: 100%;
+
+            &:hover {
+                opacity: 1;
+            }
+            
+            img {
+                display: inline-block;
+                max-width: 56px;
+                background-position: center;
+            }
+        }
+    }    
+        
+    &__menu {
+        //border: 1px solid $secondaryTextColor;
+        //padding: 16px 24px 24px 24px;
+        max-width: 300px;
+        padding-bottom: 20px;
+        &__item{
+            list-style-type: none;
+            @include text;
+            color: variaveis.$secondaryTextColor;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            cursor: pointer;
+            &:hover {
+                color: variaveis.$mainTextColor;
+            }
+        }
+    }
+}

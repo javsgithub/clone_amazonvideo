@@ -1,0 +1,167 @@
+@use "variaveis";
+@use "mixins";
+
+.movies {
+    &__menu {        
+        &__button {
+            @include text(20px);
+            color: variaveis.$secondaryTextColor;
+            font-weight: normal;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            background: none;
+            margin: 0 36px 0 0;
+            padding: 0 0 15px;
+            display: inline-block;
+            cursor: pointer;
+            border: none;
+            border-bottom: 3px solid transparent;
+
+            &--is-active {
+                color: variaveis.$mainTextColor;
+                border-bottom: 3px solid variaveis.$mainTextColor;
+                font-weight: bold;  
+            }
+            
+            &:hover {
+                border-bottom: 3px solid variaveis.$secondaryTextColor;
+            }
+        }
+    }
+
+    &__list {
+            padding: 32px 0 20px;
+            border-top: 2px solid variaveis.$mainTextColordarker;
+            display: none;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 24px;
+
+            &__item {
+                list-style-type: none;
+                //position: relative;
+                
+                a {
+                    display: inline-block;
+                    transition: all ease .4s;
+                    border: 3px solid transparent;
+                    
+                    img:first-child {
+                        max-width: 100%;
+                        border-radius: 5px;
+                        background-size: cover;
+                    }
+                    
+                    &:hover {
+                        transform: scale(1.1);
+                        border: 3px solid variaveis.$mainTextColor;
+                        border-radius: 7px;
+                        }
+                    }
+                    
+                    &--trailer {
+                        a {
+                            position: relative;
+
+                            img:last-child {
+                                position: absolute;
+                                left: 8px;
+                                bottom: 10px;
+                                display: none;
+                                transition: all ease .4s;
+                            }
+
+                            &:hover {
+                                img:last-child {                            
+                                        display: inline-block;
+                                    }
+                                }
+                        }
+                        
+                }
+                
+                &__trailer-info {
+                    &__title {
+                        color: variaveis.$mainTextColor;
+                        font-size: 15px;
+                        margin: 16px 0 8px;
+                        font-weight: bold;
+                    }
+
+                    &__text {
+                        @include text;
+                        color: variaveis.$secondaryTextColor;
+                        font-weight: bold;
+                    }
+
+                    span {
+                        margin: 8px 0 0;
+                        @include text(12px);
+                        color: variaveis.$secondaryTextColor;
+                        display: flex;
+                        align-items: center;
+                        font-weight: bold;
+                        img {
+                            width: 20px;
+                            margin-left: 8px;
+                        }
+                    }
+                }                
+                
+                &--block1 {
+                    padding: 0 12px 0 0;
+                    h3 {
+                        margin: 0 0 22px;
+                    }
+                }
+                                
+                &--block2 {
+                    padding: 0 24px 0 12px;
+                    div {
+                        margin-bottom: 16px;
+                        
+                        span {
+                            display: inline-block;
+                            line-height: 24px;
+                        }
+
+                        img {
+                            width: 20px;
+                            margin: 0 10px 0 0;
+                        }
+
+                        button {
+                            margin-right: 10px;
+                            padding: 3px;
+                            background: variaveis.$mainTextColordarker;
+                            @include text(12px);
+                            border: none;
+                            border-radius: 2px;
+                            display: inline-block;
+                            text-transform: uppercase;
+                        }
+                    }
+                }
+
+                &--block3 {
+                    div {
+                        margin-bottom: 16px;
+                        span {
+                            display: block;
+                            line-height: 24px;
+                        }
+                    }
+                }
+            }
+            
+            &--details {
+                grid-template-columns: 2fr 1fr 1fr;
+                gap: 0;
+                padding-bottom: 0;
+            }
+            
+            &--is-active {
+                display: grid;                
+            }
+        }
+}
+
