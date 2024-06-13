@@ -1,11 +1,11 @@
-@use "variaveis";
+@use "variables";
 @use "mixins";
 
 .movies {
     &__menu {        
         &__button {
-            @include text(20px);
-            color: variaveis.$secondaryTextColor;
+            @include mixins.text(20px);
+            color: variables.$secondaryTextColor;
             font-weight: normal;
             letter-spacing: 2px;
             text-transform: uppercase;
@@ -18,27 +18,26 @@
             border-bottom: 3px solid transparent;
 
             &--is-active {
-                color: variaveis.$mainTextColor;
-                border-bottom: 3px solid variaveis.$mainTextColor;
+                color: variables.$mainTextColor;
+                border-bottom: 3px solid variables.$mainTextColor;
                 font-weight: bold;  
             }
             
             &:hover {
-                border-bottom: 3px solid variaveis.$secondaryTextColor;
+                border-bottom: 3px solid variables.$secondaryTextColor;
             }
         }
     }
 
     &__list {
             padding: 32px 0 20px;
-            border-top: 2px solid variaveis.$mainTextColordarker;
+            border-top: 2px solid variables.$mainTextColordarker;
             display: none;
             grid-template-columns: 1fr 1fr 1fr 1fr;
             gap: 24px;
 
             &__item {
                 list-style-type: none;
-                //position: relative;
                 
                 a {
                     display: inline-block;
@@ -53,15 +52,13 @@
                     
                     &:hover {
                         transform: scale(1.1);
-                        border: 3px solid variaveis.$mainTextColor;
+                        border: 3px solid variables.$mainTextColor;
                         border-radius: 7px;
                         }
                     }
                     
                     &--trailer {
                         a {
-                            position: relative;
-
                             img:last-child {
                                 position: absolute;
                                 left: 8px;
@@ -75,28 +72,27 @@
                                         display: inline-block;
                                     }
                                 }
-                        }
-                        
+                        }                        
                 }
                 
                 &__trailer-info {
                     &__title {
-                        color: variaveis.$mainTextColor;
+                        color: variables.$mainTextColor;
                         font-size: 15px;
                         margin: 16px 0 8px;
                         font-weight: bold;
                     }
 
                     &__text {
-                        @include text;
-                        color: variaveis.$secondaryTextColor;
+                        @include mixins.text;
+                        color: variables.$secondaryTextColor;
                         font-weight: bold;
                     }
 
                     span {
                         margin: 8px 0 0;
-                        @include text(12px);
-                        color: variaveis.$secondaryTextColor;
+                        @include mixins.text(12px);
+                        color: variables.$secondaryTextColor;
                         display: flex;
                         align-items: center;
                         font-weight: bold;
@@ -132,8 +128,8 @@
                         button {
                             margin-right: 10px;
                             padding: 3px;
-                            background: variaveis.$mainTextColordarker;
-                            @include text(12px);
+                            background: variables.$mainTextColordarker;
+                            @include mixins.text(12px);
                             border: none;
                             border-radius: 2px;
                             display: inline-block;
@@ -163,5 +159,23 @@
                 display: grid;                
             }
         }
+    
+    @media (max-width: 640px) {
+            padding-top: 64px;
+
+            &__menu {
+                white-space: nowrap;
+            }
+
+            &__list {
+                padding: 32px 0 20px;
+                grid-template-columns: 2fr 2fr;
+                gap: 16px;
+                
+                &--is-active {
+                    display: grid;                
+                }
+            }
+        } 
 }
 

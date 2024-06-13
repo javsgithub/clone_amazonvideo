@@ -1,9 +1,9 @@
-@use "variaveis";
+@use "variables";
 @use "mixins";
 
 .footer {
     margin-top: 32px;
-    background-color: variaveis.$backgroundColor;
+    background-color: variables.$backgroundColor;
     &__branding {
         text-align: center;
         padding-top: 19px;
@@ -25,7 +25,7 @@
             &__item {
                 margin: 10px 5px;
                 padding: 1px 6px;
-                @include text(12px);
+                @include mixins.text(12px);
                 list-style-type: none;
                 cursor: pointer;
             }
@@ -33,17 +33,25 @@
 
         &__disclaimer {
             text-align: center;
-            @include text(12px);
-            color: variaveis.$secondaryTextColor;
+            @include mixins.text(12px);
+            color: variables.$secondaryTextColor;
             margin: 0 28px;
             max-width: 444px;
         }
 
         &__copyright {
-            @include text(12px);
-            color: variaveis.$secondaryTextColor;
+            @include mixins.text(12px);
+            color: variables.$secondaryTextColor;
             padding: 8px 0 24px;
             text-align: center;
+        }
+    }
+
+    @media (max-width: 640px) {
+        &__branding {
+            img {
+                width: 74px;
+            }
         }
     }
 }

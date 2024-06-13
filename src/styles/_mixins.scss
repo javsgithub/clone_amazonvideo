@@ -1,6 +1,6 @@
-@use "variaveis";
+@use "variables";
 
-@mixin controlItem ($background: variaveis.$mainTextColordarker) {
+@mixin controlItem ($background: variables.$mainTextColordarker) {
     background: $background;
     letter-spacing: 2px;
     margin: 16px 20px 0 0;
@@ -16,10 +16,10 @@
 
 @mixin text ($fontSize: 15px) {
     font-size: $fontSize;
-    color: variaveis.$mainTextColor;
+    color: variables.$mainTextColor;
 }
 
-@mixin linkControl ($color: variaveis.$mainTextColor) {
+@mixin linkControl ($color: variables.$mainTextColor) {
     @include text;
     color: $color;
     font-weight: bold;

@@ -1,4 +1,4 @@
-@use "variaveis";
+@use "variables";
 @use "mixins";
 
 .header {
@@ -10,12 +10,18 @@
         align-items: center;
         padding: 0 36px;
         position: fixed;
-        transition: all 0.3s;    
+        transition: all 0.3s;
+        background-color: transparent;
+
+        &--background{
+            background-color: variables.$backgroundColor;
+        }
     }
 
     &__branding {
         cursor: pointer;
         margin-right: 32px;
+        
         img {
             max-width: 86px;
         }
@@ -23,59 +29,141 @@
 
     &__menu {
         display: flex;
+        align-items: center;
         
         &__link {
-            margin-right: 16px;
             list-style-type: none;
+            
             a {
                 text-decoration: none;
-                padding: 14px 18px;
+                padding: 16px 12px;
                 display: flex;
                 align-items: center;
 
                 p {
                     text-transform: uppercase;
                     font-weight: bold;
-                    @include text(13px);
+                    @include mixins.text(13px);
                     letter-spacing: 1px;
                     display: inline-block;
                     margin: 12px 0 12px 8px;
                     padding: 2px 0;
-                    border-bottom: 2px solid transparent;
-                    transition: .3s ease-in-out;
-
-                    &:hover {
-                        border-bottom: 2px solid #f9f9f9;
-
-                    }
                 }
 
                 img {
-                    width: 22px;
+                    width: 26px;
                     transform: translateY(-10%);
                 }
             }
+        }
+
+        &--drop {
+            display: none;
+        }
+    }   
+
+    &__more {
+        display: none;
+        .material-symbols-outlined {
+            font-size: 22px;
         }
     }
 
     &__profile {            
         height: 56px;
+        margin-top: 8px;
+        margin-bottom: 8px;
         cursor: pointer;
         
         img {
             max-width: 56px;
-            margin-left: 16px;
             border-radius: 100%;
-            position: fixed;
-            top: 10px;
+            position: absolute;
+            top: 8px;
             right: 24px;
-            //z-index: 2;
         }    
     }
 
-    &--background {
-        background-color: variaveis.$backgroundColor;
-        transition: all 0.5s;
+    @media (max-width: 640px) {
+        &__nav { 
+            padding: 0 20px;            
+        }
+
+        &__branding {
+            cursor: pointer;
+            margin-right: 32px;
+            img {
+                max-width: 68px;
+            }
+        }
+
+        &__menu {
+            .short{
+                display: none;
+            }
+
+            .b-bottom {
+                a {
+                    padding: 0;
+                    width: 26px;
+
+                    margin: 12px 12px;
+                    border-bottom: 2px solid transparent;
+                    transition: .3s ease-in-out;
+
+                    &:hover {
+                        border-bottom: 2px solid variables.$mainTextColor;
+                    }
+                }
+            }
+
+            &__link {
+                width: 100%;
+
+                a {
+                    padding: 0 12px 0;
+
+                    p {
+                        border-bottom: 2px solid transparent;
+                        transition: .3s ease-in-out;
+
+                        &:hover {
+                            border-bottom: 2px solid variables.$mainTextColor;
+                        }
+                    }                    
+                }
+            }
+
+            &--drop {
+                padding: 0 42px 0 8px;
+                max-width: 175px;
+                border-radius: 4px;
+                border: 1px solid variables.$mainTextColordarker;
+                background-color: #131313; 
+                position: absolute; 
+                transition: all ease .4s;
+                top: 64px;
+                left: 275px;
+            }
+            
+            &--show {
+                display: block;
+                transition: .3s ease-in-out;
+            }
+        }
+
+        &__more {
+            display: flex;
+            align-items: center;
+            height: 72px;
+            width: 40px;
+            cursor: pointer;
+            
+            .material-symbols-outlined {
+                color: #f9f9f9;
+                display: block;
+                padding-bottom: 4px;
+            }
+        }
     }
 }
-

@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Clone Site Disney+</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
         <link rel="stylesheet" href="./dist/css/main.css">
     </head>
     <body class="main-image">
@@ -13,17 +14,22 @@
                         <img src="./dist/images/logo_disney.png" alt="disney+">
                     </h1>
                     <ul class="header__menu">
-                        <li class="header__menu__link">
-                            <a href="#">
-                                <img src="./dist/images/icones/house.png" alt="home">
-                                <p>Início</p>
-                            </a>
-                        </li>
-                        <li class="header__menu__link"><a href="#"><img src="./dist/images/icones/hand-lens.png" alt="search"><p>Pesquisa</p></a></li>
-                        <li class="header__menu__link"><a href="#"><img src="./dist/images/icones/whiteplus.svg" alt="my list"><p>Minha Lista</p></a></li>
-                        <li class="header__menu__link"><a href="#"><img src="./dist/images/icones/film.png" alt="movies"><p>Filmes</p></a></li>
-                        <li class="header__menu__link"><a href="#"><img src="./dist/images/icones/series.png" alt="series"><p>Séries</p></a></li>
-                        <li class="header__menu__link"><a href="#"><img src="./dist/images/icones/star.png" alt="originals"><p>Originais</p></a></li>
+                        <li class="header__menu__link b-bottom"><a href="#"><img src="./dist/images/icones/house.png" alt="home"></a></li>
+                        <li class="header__menu__link b-bottom"><a href="#"><img src="./dist/images/icones/hand-lens.png" alt="search"></a></li>
+                        <li class="header__menu__link b-bottom"><a href="#"><img src="./dist/images/icones/whiteplus.svg" alt="my list"></p></a></li>
+                        <li class="header__menu__link short"><a href="#"><img src="./dist/images/icones/film.png" alt="movies"></a></li>
+                        <li class="header__menu__link short"><a href="#"><img src="./dist/images/icones/series.png" alt="series"></a></li>
+                        <li class="header__menu__link short"><a href="#"><img src="./dist/images/icones/star.png" alt="originals"></a></li>
+                    </ul>
+                    <div class="header__more" id="more">
+                        <span class="material-symbols-outlined">
+                        more_vert
+                        </span>
+                    </div>
+                    <ul class="header__menu header__menu--drop">
+                        <li class="header__menu__link header__menu__link--hidden"><a href="#"><img src="./dist/images/icones/film.png" alt="movies"><p>filmes</p></a></li>
+                        <li class="header__menu__link header__menu__link--hidden"><a href="#"><img src="./dist/images/icones/series.png" alt="series"><p>series</p></a></li>
+                        <li class="header__menu__link header__menu__link--hidden"><a href="#"><img src="./dist/images/icones/star.png" alt="originals"><p>originais</p></a></li>
                     </ul>
                     <div class="header__profile"><img src="./dist/images/Profile-pic.jpg" alt="Profile Picture"></div>
                 </nav>
@@ -68,7 +74,7 @@
                             <button class="main-content__control__item main-content__control__item--preview">
                                 <a href="https://www.youtube.com/watch?v=KjzPi5hfv9c&t=21s" target="_blank">Trailer</a>
                             </button>
-                            <button class="main-content__control__item main-content__control__item--add"><img src="./dist/images/icones/plus.png" alt="Add to my list"></button>
+                            <button class="main-content__control__item main-content__control__item--add"><div><img src="./dist/images/icones/plus.png" alt="Add to my list"></div></button>
                         </div>
                     </div>
                 </div>
@@ -131,9 +137,10 @@
                         <div>
                             <h4 class="text--changed">Classificação</h4>
                             <span class="text"><img src="./dist/images/age.webp" alt=""></span>
+                            <p class="text">Atos Criminosos, Violência</p>
                         </div>
                         <div>
-                            <h4 class="text--changed">Dispnível nos seguintes formatos:</h4>
+                            <h4 class="text--changed">Disponível nos seguintes formatos:</h4>
                             <span class="text">
                                 <button>4k ultra hd</button>
                                 <button>hdr10</button>

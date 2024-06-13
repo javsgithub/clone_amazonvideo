@@ -1,19 +1,14 @@
-@use "variaveis";
+@use "variables";
 @use "mixins";
-
-// @mixin text ($fontSize: 15px) {
-//     font-size: $fontSize;
-//     color: variaveis.$mainTextColor;
-// }
 
 .profile {
     display: none;
     position: absolute;
     top: 0;
     right: 0;
-    border: 1px solid variaveis.$mainTextColordarker;
+    border: 1px solid variables.$mainTextColordarker;
     border-radius: 4px;
-    background-color: variaveis.$backgroundColor;
+    background-color: variables.$backgroundColor;
     transition: ease-in-out 1s;
     z-index: 1;
 
@@ -25,8 +20,8 @@
             height: 56px;
             display: flex;
             align-items: center;
-            @include text;
-            color: variaveis.$secondaryTextColor;
+            @include mixins.text;
+            color: variables.$secondaryTextColor;
             font-weight: bold;
             //padding-bottom: 16px;
             max-width: 300px;
@@ -34,7 +29,7 @@
             margin-bottom: 14px;
             cursor: pointer;
             &:hover {
-                color: variaveis.$mainTextColor;
+                color: variables.$mainTextColor;
             }
         }        
     
@@ -42,13 +37,13 @@
         display: flex;
         align-items: center;
         justify-content: left; 
-        @include text;
-        color: variaveis.$secondaryTextColor;
+        @include mixins.text;
+        color: variables.$secondaryTextColor;
         //font-weight: bold;
         max-width: 300px;
         padding-top: 16px;
         padding-bottom: 16px;
-        border-top: 1px solid variaveis.$mainTextColordarker;
+        border-top: 1px solid variables.$mainTextColordarker;
         //border-radius: 100%;
         //border: 1px solid $secondaryTextColor;
         cursor: pointer;
@@ -61,7 +56,7 @@
             height: 56px;
             //border: 1px solid $secondaryTextColor;
             margin-right: 16px;
-            background-color: variaveis.$mainTextColordarker;
+            background-color: variables.$mainTextColordarker;
             opacity: .6;
             border-radius: 100%;
 
@@ -84,13 +79,13 @@
         padding-bottom: 20px;
         &__item{
             list-style-type: none;
-            @include text;
-            color: variaveis.$secondaryTextColor;
+            @include mixins.text;
+            color: variables.$secondaryTextColor;
             padding-top: 10px;
             padding-bottom: 10px;
             cursor: pointer;
             &:hover {
-                color: variaveis.$mainTextColor;
+                color: variables.$mainTextColor;
             }
         }
     }
